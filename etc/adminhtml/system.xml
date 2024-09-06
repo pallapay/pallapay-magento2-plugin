@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="pallapay_ppg"
+                   translate="label"
+                   sortOrder="100"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Pallapay Payment Gateway</label>
+                <field id="active"
+                       translate="label comment"
+                       sortOrder="1"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="api_key"
+                       translate="label"
+                       type="text"
+                       sortOrder="2"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Api Key</label>
+                    <tooltip>Get your API Key from Pallapay api key settings in Pallapay dashboard</tooltip>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="secret_key"
+                       translate="label"
+                       type="password"
+                       sortOrder="3"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Secret Key</label>
+                    <tooltip>Get your Secret Key from Pallapay api key settings in Pallapay dashboard</tooltip>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="title"
+                       translate="label"
+                       type="text"
+                       sortOrder="5"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Title</label>
+                    <tooltip>This controls the title which the user sees during checkout</tooltip>
+                </field>
+                <field id="completed_status"
+                       translate="label"
+                       type="select"
+                       sortOrder="6"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Completed Order Status</label>
+                    <source_model>Pallapay\PPG\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Default order status of successful payments</tooltip>
+                </field>
+                <field id="pending_status"
+                       translate="label"
+                       type="select"
+                       sortOrder="7"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Pending Order Status</label>
+                    <source_model>Pallapay\PPG\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Order status after redirecting user to payment url</tooltip>
+                </field>
+                <field id="failed_status"
+                       translate="label"
+                       type="select"
+                       sortOrder="8"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Failed Order Status</label>
+                    <source_model>Pallapay\PPG\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Default order status of failed payments</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

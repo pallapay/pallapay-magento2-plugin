@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <pallapay_ppg>
+                <model>Pallapay\PPG\Model\Payment\PallapayMethod</model>
+                <title>Pallapay Crypto Payment</title>
+                <active>0</active>
+                <payment_action>true</payment_action>
+                <order_status>pending_payment</order_status>
+                <api_key></api_key>
+                <secret_key></secret_key>
+                <default_checkout_message>You will be redirected to the secure PALLAPAY checkout page.</default_checkout_message>
+                <completed_status></completed_status>
+                <pending_status></pending_status>
+                <failed_status></failed_status>
+            </pallapay_ppg>
+        </payment>
+    </default>
+</config>
